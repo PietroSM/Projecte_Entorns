@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="532.0" prefWidth="932.0" style="-fx-background-color: #33565F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolladona.projecte_ed_v2.RegisterPageController">
+   <children>
+       <Label layoutX="302.0" layoutY="42.0" text="WALLA-DONA" textFill="WHITE">
+           <font>
+               <Font name="System Bold" size="48.0" />
+           </font>
+       </Label>
+      <Label layoutX="80.0" layoutY="149.0" text="Name" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField id="TFName" layoutX="163.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="55.0" layoutY="214.0" text="Password" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <PasswordField id="PFpassword" layoutX="163.0" layoutY="211.0" prefHeight="26.0" prefWidth="186.0" />
+      <RadioButton id="RBclient" layoutX="213.0" layoutY="275.0" mnemonicParsing="false" text="Client" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="504.0" layoutY="151.0" text="Location" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField id="TFlocation" layoutX="604.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="525.0" layoutY="214.0" text="Email" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField id="TFemail" layoutX="604.0" layoutY="211.0" prefHeight="26.0" prefWidth="186.0" />
+      <RadioButton id="RBseller" layoutX="630.0" layoutY="276.0" mnemonicParsing="false" text="Seller" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="89.0" layoutY="312.0" text="CIF" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField id="TFcifclient" layoutX="163.0" layoutY="310.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="85.0" layoutY="367.0" text="DNI" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField id="TFdniclien" layoutX="163.0" layoutY="365.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="543.0" layoutY="313.0" text="CIF" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField id="TFsellercif" layoutX="604.0" layoutY="310.0" prefHeight="26.0" prefWidth="186.0" />
+      <Button id="BTNregister" layoutX="406.0" layoutY="444.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" text="Register" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
