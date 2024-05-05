@@ -5,19 +5,21 @@ import PersonP.SellerP.Seller;
 
 public abstract class Product {
     protected Seller productor;
+    protected String name;
     protected String season;
     protected double priceKg;
     protected int amount;
 
-    public Product(Seller productor, String season, double priceKg, int amount) {
+    public Product(Seller productor, String season, double priceKg, int amount, String name) {
         this.productor = productor;
         this.season = season;
         this.priceKg = priceKg;
         this.amount = amount;
+        this.name = name;
     }
 
     public Product() {
-        this(new Freelance() , "", 0, 0);
+        this(new Freelance() , "", 0, 0,"");
     }
 
     public Seller getProductor() {
@@ -52,10 +54,19 @@ public abstract class Product {
         this.amount = amount;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "productor=" + productor +
+                ", name='" + name + '\'' +
                 ", season='" + season + '\'' +
                 ", priceKg=" + priceKg +
                 ", amount=" + amount +
