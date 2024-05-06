@@ -1,5 +1,7 @@
 package PersonP;
 
+import PersonP.ClientP.Company;
+
 import java.util.ArrayList;
 
 public class Users {
@@ -14,6 +16,14 @@ public class Users {
     //SaveFile
 
     //AddUser
+    public void AddUser(Person person){
+        list_Person.add(person);
+    }
+
+    //Debugger
+    public String Showone(int pos){
+        return list_Person.get(pos).toString();
+    }
 
     //RemoveUser
 

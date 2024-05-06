@@ -15,14 +15,14 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField id="TFName" layoutX="163.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="TFName" layoutX="163.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" />
       <Label layoutX="55.0" layoutY="214.0" text="Password" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <PasswordField id="PFpassword" layoutX="163.0" layoutY="211.0" prefHeight="26.0" prefWidth="186.0" />
-      <RadioButton id="RBclient" layoutX="213.0" layoutY="275.0" mnemonicParsing="false" text="Client" textFill="WHITE">
+      <PasswordField fx:id="PFpassword" layoutX="163.0" layoutY="211.0" prefHeight="26.0" prefWidth="186.0" />
+      <RadioButton fx:id="RBclient" layoutX="213.0" layoutY="275.0" mnemonicParsing="false" text="Client" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -32,14 +32,14 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField id="TFlocation" layoutX="604.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="TFlocation" layoutX="604.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" />
       <Label layoutX="525.0" layoutY="214.0" text="Email" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField id="TFemail" layoutX="604.0" layoutY="211.0" prefHeight="26.0" prefWidth="186.0" />
-      <RadioButton id="RBseller" layoutX="630.0" layoutY="276.0" mnemonicParsing="false" text="Seller" textFill="WHITE">
+      <TextField fx:id="TFemail" layoutX="604.0" layoutY="211.0" prefHeight="26.0" prefWidth="186.0" />
+      <RadioButton fx:id="RBseller" layoutX="630.0" layoutY="276.0" mnemonicParsing="false" text="Seller" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -49,23 +49,33 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField id="TFcifclient" layoutX="163.0" layoutY="310.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="TFcifclient" layoutX="163.0" layoutY="310.0" prefHeight="26.0" prefWidth="186.0" />
       <Label layoutX="85.0" layoutY="367.0" text="DNI" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField id="TFdniclien" layoutX="163.0" layoutY="365.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="TFdniclien" layoutX="163.0" layoutY="365.0" prefHeight="26.0" prefWidth="186.0" />
       <Label layoutX="543.0" layoutY="313.0" text="CIF" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField id="TFsellercif" layoutX="604.0" layoutY="310.0" prefHeight="26.0" prefWidth="186.0" />
-      <Button id="BTNregister" layoutX="406.0" layoutY="444.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" text="Register" textFill="WHITE">
+      <TextField fx:id="TFsellercif" layoutX="604.0" layoutY="310.0" prefHeight="26.0" prefWidth="186.0" />
+      <Button fx:id="BTNregister" layoutX="406.0" layoutY="444.0" mnemonicParsing="false" onAction="#button_clic_register" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
+      <CheckBox fx:id="CBfreelance" layoutX="543.0" layoutY="368.0" mnemonicParsing="false" text="Freelance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="CBcooperative" layoutX="693.0" layoutY="370.0" mnemonicParsing="false" text="Cooperative" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
    </children>
 </AnchorPane>
