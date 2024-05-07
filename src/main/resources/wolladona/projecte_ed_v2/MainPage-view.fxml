@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:controller="wolladona.projecte_ed_v2.MainPageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="932.0" style="-fx-background-color: #33565F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="932.0" style="-fx-background-color: #33565F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolladona.projecte_ed_v2.MainPageController">
    <children>
       <Button fx:id="BTRegister" layoutX="150.0" layoutY="354.0" mnemonicParsing="false" onAction="#Click_button_Register" prefHeight="35.0" prefWidth="190.0" style="-fx-background-color: #C25C5C; -fx-border-color: white; -fx-border-width: 2;" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="BTLogin" layoutX="570.0" layoutY="356.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="190.0" style="-fx-background-color: #C25C5C; -fx-border-color: white; -fx-border-width: 2;" text="LogIn" textFill="WHITE">
+      <Button fx:id="BTLogin" layoutX="570.0" layoutY="356.0" mnemonicParsing="false" onAction="#click_button_Login" prefHeight="35.0" prefWidth="190.0" style="-fx-background-color: #C25C5C; -fx-border-color: white; -fx-border-width: 2;" text="LogIn" textFill="WHITE">
          <font>
              <Font name="System Bold" size="18.0" />
          </font>

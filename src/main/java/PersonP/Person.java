@@ -1,5 +1,7 @@
 package PersonP;
 
+import java.util.Objects;
+
 public abstract class Person {
     protected String name;
     protected String password;
@@ -50,6 +52,20 @@ public abstract class Person {
         this.email = email;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        return Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return email != null ? email.hashCode() : 0;
+    }
 
     @Override
     public String toString() {

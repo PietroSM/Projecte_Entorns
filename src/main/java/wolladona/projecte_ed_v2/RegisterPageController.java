@@ -39,11 +39,16 @@ public class RegisterPageController implements Initializable {
     @FXML
     private Button BTNregister;
 
+
     private Users usersList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersList = new Users();
+    }
+
+    public void setUsersList(Users usersList) {
+        this.usersList = usersList;
     }
 
     public void button_clic_register(ActionEvent actionEvent) {
