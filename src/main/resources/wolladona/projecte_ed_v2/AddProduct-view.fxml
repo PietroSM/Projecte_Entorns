@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="532.0" prefWidth="932.0" style="-fx-background-color: #33565F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolladona.projecte_ed_v2.AddProductController">
     <children>
         <Label layoutX="302.0" layoutY="42.0" text="WOLLA-ADD" textFill="WHITE">
@@ -12,5 +11,70 @@
                 <Font name="System Bold" size="48.0" />
             </font>
         </Label>
+      <Label layoutX="337.0" layoutY="146.0" text="Name" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="333.0" layoutY="198.0" text="Season" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="249.0" text="Price/Kg" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="294.0" text="Amount" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TFname" layoutX="425.0" layoutY="143.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TFseason" layoutX="425.0" layoutY="193.0" prefHeight="25.0" prefWidth="173.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TFprice" layoutX="425.0" layoutY="244.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TFamount" layoutX="425.0" layoutY="292.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <RadioButton fx:id="RBfruit" layoutX="306.0" layoutY="353.0" mnemonicParsing="false" text="Fruit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="RBvegetable" layoutX="423.0" layoutY="355.0" mnemonicParsing="false" text="Vegetable" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="RBleafyvegetable" layoutX="571.0" layoutY="357.0" mnemonicParsing="false" text="LeafyVegetable" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="BTNadd" layoutX="466.0" layoutY="413.0" mnemonicParsing="false" onAction="#button_click_add" prefHeight="49.0" prefWidth="92.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" text="ADD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="BTNback" layoutX="35.0" layoutY="28.0" mnemonicParsing="false" onAction="#button_click_back" prefHeight="42.0" prefWidth="65.0" style="-fx-background-color: #FFA500; -fx-border-color: white; -fx-border-width: 2;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

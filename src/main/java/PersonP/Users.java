@@ -13,10 +13,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Users {
+
+
     private ArrayList<Person> list_Person;
 
     public Users() {
         list_Person = new ArrayList<>();
+    }
+
+    public ArrayList<Person> getList_Person() {
+        return list_Person;
     }
 
     //ReadFile
