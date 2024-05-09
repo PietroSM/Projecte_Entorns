@@ -32,7 +32,7 @@ public class Users {
         try{
             BufferedReader myFile = new BufferedReader(
                     new FileReader(
-                            "I:\\Entorns_Desenvolupament\\Projecte_Final" +
+                            "D:\\Entorns_Desenvolupament\\Projecte_Final" +
                                     "\\Projecte_ED_v2\\src\\File\\Users.txt"));
             line = myFile.readLine();
 

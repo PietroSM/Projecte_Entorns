@@ -57,7 +57,6 @@ public class SellerPageController implements Initializable {
         //table.getColumns().add(TCbuttonDelete);
 
 
-
         productObservableList.addAll(inventaryList.getList_Inventary());
 
         try {
