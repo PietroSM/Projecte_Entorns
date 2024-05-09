@@ -23,7 +23,7 @@ public class Inventary {
         try{
             BufferedReader myFile = new BufferedReader(
                     new FileReader(
-                            "D:\\Entorns_Desenvolupament\\Projecte_Final" +
+                            "I:\\Entorns_Desenvolupament\\Projecte_Final" +
                                     "\\Projecte_ED_v2\\src\\File\\Inventary.txt"));
 
             line = myFile.readLine();
@@ -72,4 +72,6 @@ public class Inventary {
     public ArrayList<Product> getList_Inventary() {
         return list_Inventary;
     }
+
+
 }

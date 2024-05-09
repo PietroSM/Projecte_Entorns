@@ -1,5 +1,6 @@
 package PersonP.ClientP;
 
+
 public class Company extends Client{
     private String cif;
 

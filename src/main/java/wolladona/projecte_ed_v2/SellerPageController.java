@@ -20,6 +20,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 public class SellerPageController implements Initializable {
     @FXML
@@ -35,29 +36,29 @@ public class SellerPageController implements Initializable {
 
     private Users usersListSellerPage;
     private int pos;
-    private Inventary inventaryList;
+    //private Inventary inventaryList;
     private ObservableList<Product> productObservableList;
-
+    private ArrayList<Product> arrayListProduct;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersListSellerPage = new Users();
-        inventaryList = new Inventary();
-        inventaryList.ReadFile();
+        arrayListProduct = new ArrayList<>();
+        //inventaryList = new Inventary();
+        //inventaryList.ReadFile();
 
-       productObservableList = FXCollections.observableArrayList();
-
+        productObservableList = FXCollections.observableArrayList();
 
         this.nameC.setCellValueFactory(new PropertyValueFactory<>("name"));
         this.seasonC.setCellValueFactory(new PropertyValueFactory<>("season"));
         this.amountColum.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        //this.TCbuttonDelete.setCellValueFactory(new PropertyValueFactory<>("button"));
         this.TCbuttonDelete.setCellFactory(cell -> new ButtonCellTable());
-        //table.getColumns().add(TCbuttonDelete);
 
 
-        productObservableList.addAll(inventaryList.getList_Inventary());
+        //productObservableList.addAll(inventaryList.getList_Inventary());
+
+
 
         try {
             table.setItems(productObservableList);
@@ -65,15 +66,14 @@ public class SellerPageController implements Initializable {
             System.err.println("Error al establecer los elementos de la tabla: " + e.getMessage());
         }
 
-        //System.out.println(productObservableList.size());
-        //System.out.println(inventaryList.getList_Inventary().get(0).getName());
-
     }
 
 
-    public void SetInfoSellerPage(Users usersList, int pos){
+    public void SetInfoSellerPage(Users usersList, int pos, ArrayList<Product> arrayListProduct){
         usersListSellerPage = usersList;
         this.pos= pos;
+        this.arrayListProduct=arrayListProduct;
+        productObservableList.addAll(arrayListProduct);
     }
 
     public void button_click_Add_Formulari(ActionEvent actionEvent) throws IOException {
@@ -91,5 +91,10 @@ public class SellerPageController implements Initializable {
 
         productObservableList.add( controller.getProduct_aux());
 
+
     }
+
+
+
+
 }

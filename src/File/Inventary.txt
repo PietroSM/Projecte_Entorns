@@ -27,4 +27,4 @@ clara@gmail.com;0;invierno;70.75;45;Zanahorias
 clara@gmail.com;2;primavera;15.99;150;Tomates
 clara@gmail.com;1;otoño;32.25;90;Berenjenas
 clara@gmail.com;0;verano;16.00;140;Pepinos
-clara@gmail.com;2;invierno;45.99;70;Calabazas
+isabel@email.com;2;invierno;45.99;70;Calabazas
