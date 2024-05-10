@@ -9,15 +9,18 @@ import ProductP.VegetableLeafy;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class, in charge of managing the view of adding products
+ * @author Pedro Sala Mora
+ * @version 1
+ */
 public class AddProductController implements Initializable {
     @FXML
     private Button BTNback;
@@ -40,19 +43,23 @@ public class AddProductController implements Initializable {
 
     private Users usersListLoginPage;
     private int pos;
-
-
-
     private Product product_aux;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersListLoginPage = new Users();
 
+        ToggleGroup toggleGroup = new ToggleGroup();
+        RBleafyvegetable.setToggleGroup(toggleGroup);
+        RBfruit.setToggleGroup(toggleGroup);
+        RBvegetable.setToggleGroup(toggleGroup);
     }
 
-
-
+    /**
+     * This method, activated when we present the add button, creates the new product and saves it in the list
+     * (Aquest metode, s'activa quan presentem el boto d'afegir, crea el nou producte i el guarda en la llista)
+     * @param actionEvent Click on the add button
+     */
     public void button_click_add(ActionEvent actionEvent) {
         String tfName, tfSeason;
         double tfPrice;
@@ -74,12 +81,16 @@ public class AddProductController implements Initializable {
                     tfSeason,tfPrice,tfAmount,tfName);
         }
 
-
         Stage stage = (Stage) this.BTNadd.getScene().getWindow();
         stage.close();
-
     }
 
+    /**
+     * method to transmit the necessary information from the parent controller
+     * (metode per a transmetre la informació necessària del controlador pare)
+     * @param usersList Object that stores the list of users
+     * @param pos position in the list of users who has logged in
+     */
     public void SetInfoPage(Users usersList, int pos){
         this.usersListLoginPage = usersList;
         this.pos= pos;
@@ -89,6 +100,11 @@ public class AddProductController implements Initializable {
         return product_aux;
     }
 
+    /**
+     * Method that is activated when you hit the bach button, to return to the parent page
+     * (Metode que s'activa quan donem al botó de back, per a retornar a la pantalla pare)
+     * @param actionEvent Click on the back button
+     */
     public void button_click_back(ActionEvent actionEvent) {
         Stage stage = (Stage) this.BTNback.getScene().getWindow();
         stage.close();

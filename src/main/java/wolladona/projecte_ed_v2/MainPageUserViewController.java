@@ -1,6 +1,7 @@
 package wolladona.projecte_ed_v2;
 
 import PersonP.Users;
+import ProductP.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,7 +10,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainPageUserViewController implements Initializable {
@@ -32,12 +35,16 @@ public class MainPageUserViewController implements Initializable {
 
     private Users usersListUserPage;
     private int pos;
+    private ArrayList<Product> productArrayList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        productArrayList = new ArrayList<>();
+        pos = 0;
+        usersListUserPage = new Users();
     }
-    public void SetInfoClientPage(Users usersList, int pos){
+    public void SetInfoClientPage(Users usersList, int pos,
+                                  ArrayList<Product> productArrayList){
         usersListUserPage = usersList;
         this.pos= pos;
     }

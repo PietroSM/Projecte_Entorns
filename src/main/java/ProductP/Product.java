@@ -3,6 +3,11 @@ package ProductP;
 import PersonP.SellerP.Freelance;
 import PersonP.SellerP.Seller;
 
+/**
+ * abstract class that works as a template for the different products
+ * @author Pedro Sala Mora
+ * @version 1
+ */
 public abstract class Product {
     protected Seller productor;
     protected String name;
@@ -10,6 +15,7 @@ public abstract class Product {
     protected double priceKg;
     protected int amount;
 
+    /**Builders*/
     public Product(Seller productor, String season, double priceKg, int amount, String name) {
         this.productor = productor;
         this.season = season;
@@ -22,6 +28,7 @@ public abstract class Product {
         this(new Freelance() , "", 0, 0,"");
     }
 
+    /**Getters and Setters*/
     public Seller getProductor() {
         return productor;
     }
@@ -62,10 +69,12 @@ public abstract class Product {
         this.name = name;
     }
 
+
+    /**Override methods*/
     @Override
     public String toString() {
         return "Product{" +
-                "productor=" + productor +
+                "productor=" + productor.getName() +
                 ", name='" + name + '\'' +
                 ", season='" + season + '\'' +
                 ", priceKg=" + priceKg +

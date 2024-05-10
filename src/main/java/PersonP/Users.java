@@ -1,32 +1,39 @@
 package PersonP;
-
 import PersonP.ClientP.Client;
 import PersonP.ClientP.Company;
 import PersonP.ClientP.Particular;
 import PersonP.SellerP.Cooperative;
 import PersonP.SellerP.Freelance;
 import PersonP.SellerP.Seller;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class in charge of managing the list of users
+ * @author Pedro Sala Mora
+ * @version 1
+ */
 public class Users {
-
-
     private ArrayList<Person> list_Person;
 
-
+    /**Builder*/
     public Users() {
         list_Person = new ArrayList<>();
     }
 
+
+    /**Getters and Setters*/
     public ArrayList<Person> getList_Person() {
         return list_Person;
     }
 
-    //ReadFile
+
+    /**
+     * Method to read a file and load it into the list
+     * (Metode per a llegir un fitxer i carregar-lo en la llista)
+     */
     public void ReadFile(){
         String line = "";
 
@@ -69,23 +76,18 @@ public class Users {
         }
     }
 
-
-
     //SaveFile
 
-    //AddUser
+    /**
+     * Method to add a person to the list
+     * (Metode per afegir una persona en la llista)
+     * @param person object we want to add
+     */
     public void AddUser(Person person){
         list_Person.add(person);
     }
 
-    //Debugger
-    public String Showone(int pos){
-        return list_Person.get(pos).toString();
-    }
-
     //RemoveUser
-
-    //CheckUserExist
 
     /**
      * This method checks the user's credentials
@@ -189,8 +191,12 @@ public class Users {
         return result;
     }
 
-
-    //Return User;
+    /**
+     * method to search for a user and return it
+     * (metode per a buscar un usuari i retornar-lo)
+     * @param email user email
+     * @return the person object
+     */
     public Person PersonSearch(String email){
         Person p = null;
         //Cooperative
@@ -217,5 +223,8 @@ public class Users {
     }
 
 
-
+    //Debugger
+    public String Showone(int pos){
+        return list_Person.get(pos).toString();
+    }
 }

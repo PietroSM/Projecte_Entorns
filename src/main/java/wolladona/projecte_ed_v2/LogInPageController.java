@@ -32,7 +32,6 @@ public class LogInPageController implements Initializable {
     @FXML
     private PasswordField PFpassword;
 
-
     private Users usersListLoginPage;
     private Inventary inventaryList;
 
@@ -40,7 +39,7 @@ public class LogInPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersListLoginPage = new Users();
         inventaryList = new Inventary();
-        inventaryList.ReadFile();
+
     }
 
     public Users getUsersListLoginPage() {
@@ -81,9 +80,11 @@ public class LogInPageController implements Initializable {
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
 
-                //Array aux
-                ArrayList<Product> listProduct = new ArrayList<>();
+                inventaryList.getList_Inventary().clear();
+                inventaryList.ReadFile();
 
+                //list that will be sent together with the products left by the seller
+                ArrayList<Product> listProduct = new ArrayList<>();
                 for (int i = 0; i < inventaryList.getList_Inventary().size(); i++) {
                     if(inventaryList.getList_Inventary().get(i).getProductor()
                             .equals(usersListLoginPage.PersonSearch(emailTF))){
@@ -91,7 +92,16 @@ public class LogInPageController implements Initializable {
                     }
                 }
 
-                //mirar per a borrar
+                //Delete the list in the inventory and only leave the products of the other users
+                ArrayList<Product> listProduct_aux = new ArrayList<>();
+                for (int i = 0; i < inventaryList.getList_Inventary().size(); i++) {
+                    if(!(inventaryList.getList_Inventary().get(i).getProductor()
+                            .equals(usersListLoginPage.PersonSearch(emailTF)))){
+                        listProduct_aux.add((inventaryList.getList_Inventary().get(i)));
+                    }
+                }
+                inventaryList.getList_Inventary().clear();
+                inventaryList.setList_Inventary(listProduct_aux);
 
 
                 SellerPageController controller = loader.getController();
@@ -99,21 +109,35 @@ public class LogInPageController implements Initializable {
                         usersListLoginPage.PositionList(emailTF), listProduct);
                 stage.showAndWait();
 
-                //Retornar de la filla
+                //Load the objects that come from the daughter into the product list
+                for (int i = 0; i < controller.getArrayListProduct().size(); i++) {
+                    inventaryList.AddProduct(controller.getArrayListProduct().get(i));
+                }
+
+                inventaryList.SaveFile();
+
+
             //Client section
             }else if(usersListLoginPage.TypeOfUser(emailTF).equals("Client")){
                 FXMLLoader loader = new FXMLLoader(WallaDona.class.
                         getResource("MainPageUser-view.fxml"));
                 Scene scene = new Scene(loader.load());
                 Stage stage = new Stage();
-                stage.setTitle("Seller Page");
+                stage.setTitle("Client Page");
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
 
+                inventaryList.getList_Inventary().clear();
+                inventaryList.ReadFile();
+
                 MainPageUserViewController controller = loader.getController();
                 controller.SetInfoClientPage(usersListLoginPage,
-                        usersListLoginPage.PositionList(emailTF));
+                        usersListLoginPage.PositionList(emailTF), inventaryList.getList_Inventary());
                 stage.showAndWait();
+
+                inventaryList.getList_Inventary().clear();
+
+
 
                 //retornar de la filla
             }
@@ -121,7 +145,8 @@ public class LogInPageController implements Initializable {
     }
 
     public void button_click_back(ActionEvent actionEvent) {
-
+        Stage stage = (Stage) this.BTNback.getScene().getWindow();
+        stage.close();
     }
 
 }

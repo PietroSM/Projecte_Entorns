@@ -86,7 +86,6 @@ public class RegisterPageController implements Initializable {
             }
         }
 
-        System.out.println(usersList.Showone(0));
     }
 
 

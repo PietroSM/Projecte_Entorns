@@ -2,21 +2,37 @@ package ProductP;
 
 import PersonP.SellerP.Seller;
 import PersonP.Users;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Class responsible for managing the product inventory list
+ * @author Pedro Sala Mora
+ * @version 1
+ */
 public class Inventary {
     private ArrayList<Product> list_Inventary;
 
+    /**Builder*/
     public Inventary() {
         list_Inventary = new ArrayList<>();
     }
 
-    //ReadFile
+    /**Getters and Setters*/
+    public ArrayList<Product> getList_Inventary() {
+        return list_Inventary;
+    }
+
+    public void setList_Inventary(ArrayList<Product> list_Inventary) {
+        this.list_Inventary = list_Inventary;
+    }
+
+
+    /**Methods*/
+
+    /**
+     * method to read the txt file and load those classes into a list
+     */
     public void ReadFile(){
         String line = "";
 
@@ -58,20 +74,61 @@ public class Inventary {
         }
     }
 
-    //SaveFile
+    /**
+     * Save the list information to a .txt file
+     */
+    public void SaveFile(){
+        try{
+            BufferedWriter miFile = new BufferedWriter(
+                    new FileWriter("I:\\Entorns_Desenvolupament\\Projecte_Final" +
+                    "\\Projecte_ED_v2\\src\\File\\Inventary.txt"));
+
+            for (int i = 0; i < list_Inventary.size(); i++) {
+
+                if(list_Inventary.get(i) instanceof Fruit){
+                    miFile.write(list_Inventary.get(i).getProductor().getEmail()+";"+
+                            "0;"+list_Inventary.get(i).getSeason()+";"+
+                            list_Inventary.get(i).getPriceKg()+";"+
+                            list_Inventary.get(i).getAmount()+";"+
+                            list_Inventary.get(i).getName()+"\n");
+                } else if (list_Inventary.get(i) instanceof Vegetable) {
+                    miFile.write(list_Inventary.get(i).getProductor().getEmail()+";"+
+                            "1;"+list_Inventary.get(i).getSeason()+";"+
+                            list_Inventary.get(i).getPriceKg()+";"+
+                            list_Inventary.get(i).getAmount()+";"+
+                            list_Inventary.get(i).getName()+"\n");
+                } else if (list_Inventary.get(i) instanceof VegetableLeafy) {
+                    miFile.write(list_Inventary.get(i).getProductor().getEmail()+";"+
+                            "2;"+list_Inventary.get(i).getSeason()+";"+
+                            list_Inventary.get(i).getPriceKg()+";"+
+                            list_Inventary.get(i).getAmount()+";"+
+                            list_Inventary.get(i).getName()+"\n");
+                }
+            }
+            miFile.close();
+        }catch (IOException e) {
+            System.out.println("No se ha podido escribir en el fichero");
+        }
+    }
+
+    /**
+     * Method to add a product to the list
+     * (Metode per a afegir un producte a la llista)
+     * @param p Product object we want to add
+     */
+    public void AddProduct(Product p){
+        list_Inventary.add(p);
+    }
 
     //ShowProduct
 
     //RemoveProduct
 
-    //AddProduct
-
     //ShowProductSeller
 
 
-    public ArrayList<Product> getList_Inventary() {
-        return list_Inventary;
-    }
+
+
 
 
 }

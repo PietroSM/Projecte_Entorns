@@ -2,6 +2,11 @@ package PersonP;
 
 import java.util.Objects;
 
+/**
+ * Abstract class that serves as a template for user types
+ * @author Pedro Sala Mora
+ * @version 1
+ */
 public abstract class Person {
     protected String name;
     protected String password;
@@ -9,6 +14,7 @@ public abstract class Person {
     protected String email;
 
 
+    /**Builders*/
     public Person() {
         this("","","","");
     }
@@ -20,6 +26,8 @@ public abstract class Person {
         this.email = email;
     }
 
+
+    /**Getters and Setters*/
     public String getName() {
         return name;
     }
@@ -52,6 +60,8 @@ public abstract class Person {
         this.email = email;
     }
 
+
+    /**Override Methods*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

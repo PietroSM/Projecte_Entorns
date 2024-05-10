@@ -6,23 +6,29 @@
 
 <AnchorPane prefHeight="532.0" prefWidth="932.0" style="-fx-background-color: #33565F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolladona.projecte_ed_v2.SellerPageController">
     <children>
-        <Label layoutX="302.0" layoutY="42.0" text="WALLA-DONA" textFill="WHITE">
+        <Label layoutX="281.0" layoutY="24.0" text="WALLA-DONA" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="48.0" />
             </font>
         </Label>
-        <Button layoutX="736.0" layoutY="42.0" mnemonicParsing="false" onAction="#button_click_Add_Formulari" prefHeight="50.0" prefWidth="123.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" styleClass="BTNadProducte" text="ADD" textFill="WHITE">
+        <Button layoutX="739.0" layoutY="24.0" mnemonicParsing="false" onAction="#button_click_Add_Formulari" prefHeight="50.0" prefWidth="123.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" styleClass="BTNadProducte" text="ADD" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Button>
-      <TableView fx:id="table" layoutX="202.0" layoutY="180.0" prefHeight="340.0" prefWidth="419.0">
+      <TableView fx:id="table" layoutX="194.0" layoutY="147.0" prefHeight="340.0" prefWidth="545.0">
         <columns>
-          <TableColumn fx:id="nameC" prefWidth="121.0" text="name" />
-          <TableColumn fx:id="seasonC" prefWidth="88.0" text="season" />
-            <TableColumn fx:id="amountColum" prefWidth="75.0" text="amount" />
-            <TableColumn fx:id="TCbuttonDelete" prefWidth="75.0" text="Delete" />
+          <TableColumn fx:id="nameC" prefWidth="113.0" text="Name" />
+          <TableColumn fx:id="seasonC" prefWidth="111.0" text="Season" />
+            <TableColumn fx:id="amountColum" prefWidth="93.0" text="Amount" />
+            <TableColumn fx:id="TCPrice" prefWidth="102.0" text="Price" />
+            <TableColumn fx:id="TCbuttonDelete" prefWidth="101.0" text="Delete" />
         </columns>
       </TableView>
+        <Button fx:id="BTNback" layoutX="35.0" layoutY="28.0" mnemonicParsing="false" onAction="#button_click_back" prefHeight="42.0" prefWidth="65.0" style="-fx-background-color: #FFA500; -fx-border-color: white; -fx-border-width: 2;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>

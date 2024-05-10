@@ -46,7 +46,6 @@ public class MainPageController implements Initializable {
         RegisterPageController controller = loader.getController();
         controller.setUsersList(userListMain);
         stage.showAndWait();
-        System.out.println(userListMain.Showone(0));
     }
 
 
