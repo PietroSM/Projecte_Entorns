@@ -39,7 +39,6 @@ public class LogInPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersListLoginPage = new Users();
         inventaryList = new Inventary();
-
     }
 
     public Users getUsersListLoginPage() {
@@ -135,15 +134,22 @@ public class LogInPageController implements Initializable {
                         usersListLoginPage.PositionList(emailTF), inventaryList.getList_Inventary());
                 stage.showAndWait();
 
+                //Return the products
                 inventaryList.getList_Inventary().clear();
+                for (int i = 0; i < controller.getproductArrayList().size(); i++) {
+                    inventaryList.AddProduct(controller.getproductArrayList().get(i));
+                }
 
-
-
-                //retornar de la filla
+                inventaryList.SaveFile();
             }
         }
     }
 
+    /**
+     * Method that is activated when you hit the bach button, to return to the parent page
+     * (Metode que s'activa quan donem al botó de back, per a retornar a la pantalla pare)
+     * @param actionEvent Click on the back button
+     */
     public void button_click_back(ActionEvent actionEvent) {
         Stage stage = (Stage) this.BTNback.getScene().getWindow();
         stage.close();

@@ -11,14 +11,12 @@ import java.util.ArrayList;
  */
 public abstract class Client extends Person {
     protected int id_Client;
-    protected ArrayList<Product> list_cart;
 
     /**Builders*/
     public Client(String name, String password, String location, String email,
                   int id_Client) {
         super(name, password, location, email);
         this.id_Client = id_Client;
-        list_cart = new ArrayList<>();
     }
 
     public Client() {
@@ -35,21 +33,6 @@ public abstract class Client extends Person {
         this.id_Client = id_Client;
     }
 
-
-    /**Methods*/
-    //AddProduct
-
-    //RemoveProduct
-
-    //CalculatePrice
-
-    //ShowProduct
-
-    //ShowProductLocation
-
-    //ShowProductCategory
-
-    //Prucharse
 
     
     /**Override methods*/

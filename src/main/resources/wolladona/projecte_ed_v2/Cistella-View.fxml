@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="532.0" prefWidth="932.0" style="-fx-background-color: #33565F;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolladona.projecte_ed_v2.CistellaViewController">
+    <children>
+        <Label layoutX="302.0" layoutY="33.0" text="WALLA-DONA" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="48.0" />
+            </font>
+        </Label>
+        <TableView fx:id="table" layoutX="79.0" layoutY="134.0" prefHeight="340.0" prefWidth="551.0">
+            <columns>
+                <TableColumn fx:id="nameC" prefWidth="121.0" text="name" />
+                <TableColumn fx:id="seasonC" prefWidth="88.0" text="season" />
+                <TableColumn fx:id="TCPrice" prefWidth="102.0" text="Price" />
+                <TableColumn fx:id="amountColum" prefWidth="91.0" text="amount" />
+                <TableColumn fx:id="TClocation" prefWidth="112.0" text="Location" />
+            </columns>
+        </TableView>
+        <Button fx:id="BTNback" layoutX="35.0" layoutY="28.0" mnemonicParsing="false" onAction="#button_click_back" prefHeight="42.0" prefWidth="65.0" style="-fx-background-color: #FFA500; -fx-border-color: white; -fx-border-width: 2;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+      <Button fx:id="BTNpurchase" layoutX="745.0" layoutY="440.0" mnemonicParsing="false" onAction="#button_click_purchase" style="-fx-background-color: #8C4C4C; -fx-border-color: white; -fx-border-width: 2;" text="Purchase" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TFpurchase" layoutX="725.0" layoutY="383.0" prefHeight="39.0" prefWidth="122.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </TextField>
+    </children>
+</AnchorPane>

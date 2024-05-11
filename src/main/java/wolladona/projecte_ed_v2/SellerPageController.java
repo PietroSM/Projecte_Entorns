@@ -33,8 +33,6 @@ public class SellerPageController implements Initializable {
     @FXML
     private TableColumn<Product, Void> TCPrice;
     @FXML
-    private Button BTNback;
-    @FXML
     private TableColumn<Product, Void> TCbuttonDelete;
     @FXML
     private TableColumn<Product,Integer> amountColum;
@@ -44,6 +42,8 @@ public class SellerPageController implements Initializable {
     private TableColumn<Product,String> nameC;
     @FXML
     private TableColumn<Product, String> seasonC;
+    @FXML
+    private Button BTNback;
 
     private Users usersListSellerPage;
     private int pos;

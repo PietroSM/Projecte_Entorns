@@ -2,6 +2,7 @@ package ProductP;
 
 import PersonP.SellerP.Freelance;
 import PersonP.SellerP.Seller;
+import javafx.scene.control.CheckBox;
 
 /**
  * abstract class that works as a template for the different products
@@ -14,6 +15,7 @@ public abstract class Product {
     protected String season;
     protected double priceKg;
     protected int amount;
+    protected CheckBox checked;
 
     /**Builders*/
     public Product(Seller productor, String season, double priceKg, int amount, String name) {
@@ -22,6 +24,7 @@ public abstract class Product {
         this.priceKg = priceKg;
         this.amount = amount;
         this.name = name;
+        this.checked =new CheckBox();
     }
 
     public Product() {
@@ -29,6 +32,7 @@ public abstract class Product {
     }
 
     /**Getters and Setters*/
+
     public Seller getProductor() {
         return productor;
     }
@@ -69,6 +73,29 @@ public abstract class Product {
         this.name = name;
     }
 
+    public CheckBox getChecked() {
+        return checked;
+    }
+
+    public void setChecked(CheckBox checked) {
+        this.checked = checked;
+    }
+
+    /**Methods*/
+
+    /**
+     * Method to obtain the location of the producer
+     * (Metode per a obtindre la localització del productor)
+     * @return the location of the producer
+     */
+    public String getProductorLocation() {
+        if (productor != null) {
+            return productor.getLocation();
+        } else {
+            return "Localización no disponible";
+        }
+    }
+
 
     /**Override methods*/
     @Override
@@ -81,4 +108,8 @@ public abstract class Product {
                 ", amount=" + amount +
                 '}';
     }
+
+
+
+
 }

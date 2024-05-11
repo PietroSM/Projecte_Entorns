@@ -10,7 +10,8 @@ import java.io.IOException;
 public class WallaDona extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(WallaDona.class.getResource("MainPage-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WallaDona.class
+                .getResource("MainPage-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 932, 523);
         stage.setTitle("Walla-Dona");
         stage.setScene(scene);

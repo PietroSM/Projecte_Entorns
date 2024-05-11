@@ -13,6 +13,11 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class in charge of managing the registration page, where a user can register
+ * @author Pedro Sala Mora
+ * @version 1
+ */
 public class RegisterPageController implements Initializable {
     @FXML
     private CheckBox CBfreelance;
@@ -51,6 +56,11 @@ public class RegisterPageController implements Initializable {
         this.usersList = usersList;
     }
 
+    /**
+     * Method that validates the credentials and registers the user
+     * (Metode que sencarrega de validar les credencials i registra el usuari)
+     * @param actionEvent the click of the BTNregister button
+     */
     public void button_clic_register(ActionEvent actionEvent) {
         String name, password, location, email;
         String cifCLient, dniClient, cifSeller;

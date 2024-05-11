@@ -5,9 +5,8 @@ import PersonP.ClientP.Particular;
 import PersonP.SellerP.Cooperative;
 import PersonP.SellerP.Freelance;
 import PersonP.SellerP.Seller;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +15,12 @@ import java.util.ArrayList;
  * @version 1
  */
 public class Users {
+    private final static String URL_FILE = "I:\\Entorns_Desenvolupament\\Projecte_Final" +
+            "\\Projecte_ED_v2\\src\\File\\Users.txt";
+
+
     private ArrayList<Person> list_Person;
+
 
     /**Builder*/
     public Users() {
@@ -39,9 +43,7 @@ public class Users {
 
         try{
             BufferedReader myFile = new BufferedReader(
-                    new FileReader(
-                            "I:\\Entorns_Desenvolupament\\Projecte_Final" +
-                                    "\\Projecte_ED_v2\\src\\File\\Users.txt"));
+                    new FileReader(URL_FILE));
             line = myFile.readLine();
 
             while(line!=null){
@@ -76,7 +78,48 @@ public class Users {
         }
     }
 
-    //SaveFile
+    /**
+     * Method to save the created users in a .txt file and clear the list_Person
+     * (Metode per a guardar els usuaris creats en un fitxer .txt i netejar la list_Person)
+     */
+    public  void SaveFile(){
+
+        try{
+            BufferedWriter myFile = new BufferedWriter(
+                    new FileWriter(URL_FILE));
+
+            for (int i = 0; i < list_Person.size(); i++) {
+                if(list_Person.get(i) instanceof Particular){
+                    myFile.write(list_Person.get(i).getName()+";"+
+                            list_Person.get(i).getPassword()+";"+
+                            list_Person.get(i).location+";"+
+                            list_Person.get(i).getEmail()+";"+"0"+";"+
+                            ((Particular) list_Person.get(i)).getDni()+"\n");
+                } else if (list_Person.get(i) instanceof Company) {
+                    myFile.write(list_Person.get(i).getName()+";"+
+                            list_Person.get(i).getPassword()+";"+
+                            list_Person.get(i).location+";"+
+                            list_Person.get(i).getEmail()+";"+"1"+";"+
+                            ((Company) list_Person.get(i)).getCif()+"\n");
+                } else if (list_Person.get(i) instanceof Freelance) {
+                    myFile.write(list_Person.get(i).getName()+";"+
+                            list_Person.get(i).getPassword()+";"+
+                            list_Person.get(i).location+";"+
+                            list_Person.get(i).getEmail()+";"+"2"+";"+
+                            ((Freelance) list_Person.get(i)).getCif()+"\n");
+                } else if (list_Person.get(i) instanceof Cooperative) {
+                    myFile.write(list_Person.get(i).getName()+";"+
+                            list_Person.get(i).getPassword()+";"+
+                            list_Person.get(i).location+";"+
+                            list_Person.get(i).getEmail()+";"+"3"+";"+
+                            ((Cooperative) list_Person.get(i)).getCif()+"\n");
+                }
+            }
+            myFile.close();
+        } catch (IOException e) {
+            System.out.println("No se ha podido escribir en el fichero");
+        }
+    }
 
     /**
      * Method to add a person to the list
@@ -86,8 +129,6 @@ public class Users {
     public void AddUser(Person person){
         list_Person.add(person);
     }
-
-    //RemoveUser
 
     /**
      * This method checks the user's credentials
@@ -222,9 +263,4 @@ public class Users {
         return p;
     }
 
-
-    //Debugger
-    public String Showone(int pos){
-        return list_Person.get(pos).toString();
-    }
 }

@@ -11,11 +11,14 @@
                 <Font name="System Bold" size="48.0" />
             </font>
         </Label>
-        <TableView fx:id="table" layoutX="202.0" layoutY="180.0" prefHeight="340.0" prefWidth="419.0">
+        <TableView fx:id="table" layoutX="169.0" layoutY="178.0" prefHeight="340.0" prefWidth="595.0">
             <columns>
                 <TableColumn fx:id="nameC" prefWidth="121.0" text="name" />
                 <TableColumn fx:id="seasonC" prefWidth="88.0" text="season" />
-                <TableColumn fx:id="amountColum" prefWidth="75.0" text="amount" />
+                <TableColumn fx:id="TCPrice" prefWidth="102.0" text="Price" />
+                <TableColumn fx:id="amountColum" prefWidth="84.0" text="amount" />
+            <TableColumn fx:id="TClocation" prefWidth="109.0" text="Location" />
+            <TableColumn fx:id="TCbuy" prefWidth="75.0" text="Buy" />
             </columns>
         </TableView>
       <Label layoutX="99.0" layoutY="116.0" text="Type" textFill="WHITE">
@@ -46,6 +49,11 @@
         <Button fx:id="BTNcistella" layoutX="736.0" layoutY="42.0" mnemonicParsing="false" onAction="#button_click_Add_Cistella" prefHeight="50.0" prefWidth="123.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" styleClass="BTNcistella" text="Cistella" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="BTNback" layoutX="35.0" layoutY="28.0" mnemonicParsing="false" onAction="#button_click_back" prefHeight="42.0" prefWidth="65.0" style="-fx-background-color: #FFA500; -fx-border-color: white; -fx-border-width: 2;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
             </font>
         </Button>
     </children>

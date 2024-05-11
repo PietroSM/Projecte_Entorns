@@ -11,6 +11,9 @@ import java.util.ArrayList;
  * @version 1
  */
 public class Inventary {
+    private final static String URL_FILE = "I:\\Entorns_Desenvolupament\\Projecte_Final" +
+            "\\Projecte_ED_v2\\src\\File\\Inventary.txt";
+
     private ArrayList<Product> list_Inventary;
 
     /**Builder*/
@@ -38,9 +41,7 @@ public class Inventary {
 
         try{
             BufferedReader myFile = new BufferedReader(
-                    new FileReader(
-                            "I:\\Entorns_Desenvolupament\\Projecte_Final" +
-                                    "\\Projecte_ED_v2\\src\\File\\Inventary.txt"));
+                    new FileReader(URL_FILE));
 
             line = myFile.readLine();
             while(line!=null){
@@ -80,8 +81,7 @@ public class Inventary {
     public void SaveFile(){
         try{
             BufferedWriter miFile = new BufferedWriter(
-                    new FileWriter("I:\\Entorns_Desenvolupament\\Projecte_Final" +
-                    "\\Projecte_ED_v2\\src\\File\\Inventary.txt"));
+                    new FileWriter(URL_FILE));
 
             for (int i = 0; i < list_Inventary.size(); i++) {
 
@@ -120,15 +120,18 @@ public class Inventary {
         list_Inventary.add(p);
     }
 
-    //ShowProduct
-
-    //RemoveProduct
-
-    //ShowProductSeller
-
-
-
-
-
+    /**
+     * Method to calculate the price of an inventory
+     * (Metode per a calcular el preu de un inventari)
+     * @param list_product List containing the products to be calculated
+     * @return the resulting price
+     */
+    public static double CalculatePrice(ArrayList<Product> list_product){
+        double aux = 0;
+        for (int i = 0; i < list_product.size(); i++) {
+            aux += list_product.get(i).getPriceKg() * list_product.get(i).getAmount();
+        }
+        return  aux;
+    }
 
 }
