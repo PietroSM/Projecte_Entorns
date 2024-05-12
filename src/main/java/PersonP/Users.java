@@ -22,13 +22,13 @@ public class Users {
     private ArrayList<Person> list_Person;
 
 
-    /**Builder*/
+    //Builder
     public Users() {
         list_Person = new ArrayList<>();
     }
 
 
-    /**Getters and Setters*/
+    //Getters and Setters
     public ArrayList<Person> getList_Person() {
         return list_Person;
     }

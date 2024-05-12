@@ -1,11 +1,9 @@
 isabel@email.com;2;invierno;45.99;70;Calabazas
 clara@gmail.com;0;invierno;70.75;45;Zanahorias
-clara@gmail.com;2;primavera;12.99;150;Tomates
 clara@gmail.com;2;primavera;15.99;150;Tomates
 clara@gmail.com;0;verano;20.0;120;Sandías
 clara@gmail.com;0;otoño;35.5;75;Remolachas
 clara@gmail.com;1;primavera;20.75;85;Puerros
-clara@gmail.com;2;verano;8.99;200;Pimientos
 clara@gmail.com;1;primavera;18.75;90;Pepinos
 clara@gmail.com;2;verano;6.99;220;Pepinos
 clara@gmail.com;0;verano;16.0;140;Pepinos
@@ -27,4 +25,3 @@ clara@gmail.com;2;invierno;55.99;60;Calabacines
 clara@gmail.com;1;verano;12.5;200;Calabacines
 clara@gmail.com;1;invierno;65.0;50;Brócoli
 clara@gmail.com;1;otoño;32.25;90;Berenjenas
-clara@gmail.com;0;primavera;3.0;10;Cirera

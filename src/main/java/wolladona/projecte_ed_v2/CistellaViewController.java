@@ -108,7 +108,7 @@ public class CistellaViewController implements Initializable {
     /**
      * Method that is activated when we click the BTNpurchase button and show the purchase made
      * (Metode que s'activa quan cliquem el botó BTNpurchase i mostrar la compra realitzada)
-     * @param actionEvent
+     * @param actionEvent Click on the pruchase button
      */
     public void button_click_purchase(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

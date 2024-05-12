@@ -10,7 +10,7 @@ public abstract class Seller extends Person {
     protected int id_Seller;
     protected String cif;
 
-    /**Builders*/
+    //Builders
     public Seller(String name, String password, String location, String email,
                   int id_Seller, String cif) {
         super(name, password, location, email);
@@ -22,7 +22,7 @@ public abstract class Seller extends Person {
         this("","","","",0,"");
     }
 
-    /**Getters and Setters*/
+    //Getters and Setters
     public int getId_Seller() {
         return id_Seller;
     }
@@ -39,7 +39,7 @@ public abstract class Seller extends Person {
         this.cif = cif;
     }
 
-    /**Overides Methods*/
+    //Overides Methods
     @Override
     public String toString() {
         return "Seller{" +

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public abstract class Client extends Person {
     protected int id_Client;
 
-    /**Builders*/
+    //Builders
     public Client(String name, String password, String location, String email,
                   int id_Client) {
         super(name, password, location, email);
@@ -24,7 +24,7 @@ public abstract class Client extends Person {
     }
 
 
-    /**Getters and Setters*/
+    //Getters and Setters
     public int getId_Client() {
         return id_Client;
     }
@@ -35,7 +35,7 @@ public abstract class Client extends Person {
 
 
     
-    /**Override methods*/
+    //Override methods
     @Override
     public String toString() {
         return "Client{" +

@@ -16,12 +16,12 @@ public class Inventary {
 
     private ArrayList<Product> list_Inventary;
 
-    /**Builder*/
+    //Builder
     public Inventary() {
         list_Inventary = new ArrayList<>();
     }
 
-    /**Getters and Setters*/
+    //Getters and Setters
     public ArrayList<Product> getList_Inventary() {
         return list_Inventary;
     }
@@ -31,8 +31,7 @@ public class Inventary {
     }
 
 
-    /**Methods*/
-
+    //Methods
     /**
      * method to read the txt file and load those classes into a list
      */

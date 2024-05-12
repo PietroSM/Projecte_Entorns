@@ -58,7 +58,7 @@ public class LogInPageController implements Initializable {
      * This method gives functionality to the login button to start and edit the corresponding window
      * (Aquest métode, dona funcionalitat al botó d'iniciar sessió per a iniciar i redigirir a la finestra corresponent)
      * @param actionEvent OnClick()
-     * @throws IOException
+     * @throws IOException Exception if the view does not exist
      */
     public void button_click_login(ActionEvent actionEvent) throws IOException {
         String emailTF, passwordPF;

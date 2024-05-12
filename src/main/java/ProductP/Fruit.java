@@ -10,7 +10,7 @@ import PersonP.SellerP.Seller;
  */
 public class Fruit extends Product{
 
-    /**Builders*/
+    //Builders
     public Fruit(Seller productor, String season, double priceKg, int amount, String name) {
         super(productor, season, priceKg, amount, name);
     }
@@ -19,7 +19,7 @@ public class Fruit extends Product{
         this(new Freelance() , "", 0, 0,"");
     }
 
-    /**Overrides methods*/
+    //Overrides methods
     @Override
     public String toString() {
         return "Fruit{} " + super.toString();

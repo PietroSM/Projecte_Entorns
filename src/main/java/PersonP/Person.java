@@ -14,7 +14,7 @@ public abstract class Person {
     protected String email;
 
 
-    /**Builders*/
+    //Builders
     public Person() {
         this("","","","");
     }
@@ -27,7 +27,8 @@ public abstract class Person {
     }
 
 
-    /**Getters and Setters*/
+    //Getters and Setters
+
     public String getName() {
         return name;
     }
@@ -61,7 +62,7 @@ public abstract class Person {
     }
 
 
-    /**Override Methods*/
+    //Override Methods
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

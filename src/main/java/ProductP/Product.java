@@ -17,7 +17,7 @@ public abstract class Product {
     protected int amount;
     protected CheckBox checked;
 
-    /**Builders*/
+    //Builders
     public Product(Seller productor, String season, double priceKg, int amount, String name) {
         this.productor = productor;
         this.season = season;
@@ -31,8 +31,7 @@ public abstract class Product {
         this(new Freelance() , "", 0, 0,"");
     }
 
-    /**Getters and Setters*/
-
+    //Getters and Setters
     public Seller getProductor() {
         return productor;
     }
@@ -81,7 +80,7 @@ public abstract class Product {
         this.checked = checked;
     }
 
-    /**Methods*/
+    //Methods
 
     /**
      * Method to obtain the location of the producer
@@ -97,7 +96,7 @@ public abstract class Product {
     }
 
 
-    /**Override methods*/
+    //Override methods
     @Override
     public String toString() {
         return "Product{" +
