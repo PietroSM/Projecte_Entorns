@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,9 +21,17 @@ import java.util.ResourceBundle;
  */
 public class RegisterPageController implements Initializable {
     @FXML
-    private CheckBox CBfreelance;
+    private Button BTNback;
     @FXML
-    private CheckBox CBcooperative;
+    private RadioButton RBfreelance;
+    @FXML
+    private RadioButton RBcooperative;
+    @FXML
+    private Label labelCifSeller;
+    @FXML
+    private Label labelCifClient;
+    @FXML
+    private Label labeldniClient;
     @FXML
     private TextField TFName;
     @FXML
@@ -50,10 +59,56 @@ public class RegisterPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersList = new Users();
+
+        ToggleGroup toggleGroup1 = new ToggleGroup();
+        RBseller.setToggleGroup(toggleGroup1);
+        RBclient.setToggleGroup(toggleGroup1);
+
+        ToggleGroup toggleGroup2 = new ToggleGroup();
+        RBcooperative.setToggleGroup(toggleGroup2);
+        RBfreelance.setToggleGroup(toggleGroup2);
+
+        labelCifClient.setVisible(false);
+        TFcifclient.setVisible(false);
+        labeldniClient.setVisible(false);
+        TFdniclien.setVisible(false);
+
+        labelCifSeller.setVisible(false);
+        TFsellercif.setVisible(false);
+        RBcooperative.setVisible(false);
+        RBfreelance.setVisible(false);
     }
 
     public void setUsersList(Users usersList) {
         this.usersList = usersList;
+    }
+
+
+
+    public void radioClient_click(ActionEvent actionEvent) {
+        labelCifClient.setVisible(true);
+        TFcifclient.setVisible(true);
+        labeldniClient.setVisible(true);
+        TFdniclien.setVisible(true);
+
+        labelCifSeller.setVisible(false);
+        TFsellercif.setVisible(false);
+        RBcooperative.setVisible(false);
+        RBfreelance.setVisible(false);
+    }
+
+
+
+    public void radioSeller_click(ActionEvent actionEvent) {
+        labelCifClient.setVisible(false);
+        TFcifclient.setVisible(false);
+        labeldniClient.setVisible(false);
+        TFdniclien.setVisible(false);
+
+        labelCifSeller.setVisible(true);
+        TFsellercif.setVisible(true);
+        RBcooperative.setVisible(true);
+        RBfreelance.setVisible(true);
     }
 
     /**
@@ -77,27 +132,35 @@ public class RegisterPageController implements Initializable {
 
             if(dniClient.isEmpty()){
                 usersList.AddUser(new Company(name,password,location,email,
-                        0,cifCLient));
+                        1,cifCLient));
 
             }else if(cifCLient.isEmpty()){
                 usersList.AddUser(new Particular(name,password,location,email,
-                        1,dniClient));
+                        0,dniClient));
             }
 
         }else if(RBseller.isSelected()){
             cifSeller = TFsellercif.getText();
 
-            if(CBfreelance.isSelected()){
+            if(RBfreelance.isSelected()){
                 usersList.AddUser(new Freelance(name,password,location,email,
                         2,cifSeller));
-            }else if(CBcooperative.isSelected()){
+            }else if(RBcooperative.isSelected()){
                 usersList.AddUser(new Cooperative(name,password,location,email,
-                        2,cifSeller));
+                        3,cifSeller));
             }
         }
 
     }
 
 
-
+    /**
+     * Method that is activated when you hit the bach button, to return to the parent page
+     * (Metode que s'activa quan donem al botó de back, per a retornar a la pantalla pare)
+     * @param actionEvent Click on the back button
+     */
+    public void button_click_back(ActionEvent actionEvent) {
+        Stage stage = (Stage) this.BTNback.getScene().getWindow();
+        stage.close();
+    }
 }
