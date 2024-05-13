@@ -58,7 +58,6 @@ public class MainPageController implements Initializable {
         RegisterPageController controller = loader.getController();
         controller.setUsersList(userListMain);
         stage.showAndWait();
-
         userListMain.SaveFile();
     }
 

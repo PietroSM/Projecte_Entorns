@@ -174,6 +174,17 @@ public class Users {
         return result;
     }
 
+
+    public boolean CheckEmails(String email){
+        boolean resultat = false;
+        for (int i = 0; i < list_Person.size(); i++) {
+            if(list_Person.get(i).getEmail().equals(email)){
+                resultat = true;
+            }
+        }
+        return resultat;
+    }
+
     /**
      * This method checks what type the user who wants to log in is
      * (Aquest métode comprova de que tipo es el usuari que vol iniciar sessió)

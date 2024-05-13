@@ -19,3 +19,4 @@ Adrian77;AdrianPass;Salamanca;adrian@email.com;1;ES23456789R
 Sara_123;SaraSecure;Toledo;sara@email.com;0;ES12345678S
 Victor_09;VictorPassword;Segovia;victor@email.com;1;ES34567890T
 Clara;DanaPass;Castelló;clara@gmail.com;3;12345678Z
+Sheila;1234;sheila@email.com;Sant Vicent;1;122434c
