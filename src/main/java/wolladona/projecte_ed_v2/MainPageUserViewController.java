@@ -16,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -61,6 +62,7 @@ public class MainPageUserViewController implements Initializable {
     private int pos;
     private ArrayList<Product> productArrayList;
     private ObservableList<Product> productObservableList;
+    private ObservableList<Product> productsFiltrer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -72,6 +74,7 @@ public class MainPageUserViewController implements Initializable {
          * Code to load the information into the table
          */
         productObservableList = FXCollections.observableArrayList();
+
         this.nameC.setCellValueFactory(new PropertyValueFactory<>("name"));
         this.seasonC.setCellValueFactory(new PropertyValueFactory<>("season"));
         this.amountColum.setCellValueFactory(new PropertyValueFactory<>("amount"));
@@ -84,6 +87,9 @@ public class MainPageUserViewController implements Initializable {
         } catch (Exception e) {
             System.err.println("Error setting table elements: " + e.getMessage());
         }
+
+
+        productsFiltrer = FXCollections.observableArrayList();
     }
 
     /**
@@ -148,6 +154,25 @@ public class MainPageUserViewController implements Initializable {
         productObservableList.addAll(controller.getProductArrayList());
     }
 
+
+    public void typefiltre_Released(KeyEvent keyEvent) {
+        String filtre = this.TFtype.getText();
+
+        if(filtre.isEmpty()){
+            this.table.setItems(productObservableList);
+        }else{
+            this.productsFiltrer.clear();
+            for (int i = 0; i < productObservableList.size(); i++) {
+                if(productObservableList.get(i).getName().contains(filtre)){
+                    this.productsFiltrer.add(productObservableList.get(i));
+                }
+            }
+            this.table.setItems(productsFiltrer);
+        }
+    }
+
+
+
     /**
      * Method that is activated when you hit the bach button, to return to the parent page
      * (Metode que s'activa quan donem al botó de back, per a retornar a la pantalla pare)
@@ -161,5 +186,6 @@ public class MainPageUserViewController implements Initializable {
 
     public void button_click_search(ActionEvent actionEvent) {
     }
+
 
 }

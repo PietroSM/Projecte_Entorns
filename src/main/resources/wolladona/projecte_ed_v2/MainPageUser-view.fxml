@@ -26,7 +26,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="TFtype" layoutX="165.0" layoutY="111.0">
+      <TextField fx:id="TFtype" layoutX="165.0" layoutY="111.0" onKeyReleased="#typefiltre_Released">
          <font>
             <Font size="14.0" />
          </font>
