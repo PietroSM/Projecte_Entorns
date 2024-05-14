@@ -36,16 +36,11 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="TFlocation" layoutX="456.0" layoutY="111.0">
+      <TextField fx:id="TFlocation" layoutX="456.0" layoutY="111.0" onKeyReleased="#locationfiltre_Released">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="BTNsearch" layoutX="660.0" layoutY="110.0" mnemonicParsing="false" onAction="#button_click_search" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" text="Search" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
         <Button fx:id="BTNcistella" layoutX="736.0" layoutY="42.0" mnemonicParsing="false" onAction="#button_click_Add_Cistella" prefHeight="50.0" prefWidth="123.0" style="-fx-background-color: #607EA7; -fx-border-color: white; -fx-border-width: 2;" styleClass="BTNcistella" text="Cistella" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />

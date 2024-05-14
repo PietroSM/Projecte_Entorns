@@ -50,7 +50,6 @@ public class SellerPageController implements Initializable {
     private ObservableList<Product> productObservableList;
     private ArrayList<Product> arrayListProduct;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersListSellerPage = new Users();
@@ -112,7 +111,10 @@ public class SellerPageController implements Initializable {
         controller.SetInfoPage(usersListSellerPage,pos);
         stage.showAndWait();
 
-        productObservableList.add( controller.getProduct_aux());
+        if(controller.getCreate()){
+            productObservableList.add( controller.getProduct_aux());
+        }
+
     }
 
     /**

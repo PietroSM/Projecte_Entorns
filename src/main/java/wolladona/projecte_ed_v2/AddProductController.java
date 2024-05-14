@@ -44,10 +44,12 @@ public class AddProductController implements Initializable {
     private Users usersListLoginPage;
     private int pos;
     private Product product_aux;
+    private boolean create;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usersListLoginPage = new Users();
+        create = true;
 
         ToggleGroup toggleGroup = new ToggleGroup();
         RBleafyvegetable.setToggleGroup(toggleGroup);
@@ -100,12 +102,17 @@ public class AddProductController implements Initializable {
         return product_aux;
     }
 
+    public boolean getCreate() {
+        return create;
+    }
+
     /**
      * Method that is activated when you hit the bach button, to return to the parent page
      * (Metode que s'activa quan donem al botó de back, per a retornar a la pantalla pare)
      * @param actionEvent Click on the back button
      */
     public void button_click_back(ActionEvent actionEvent) {
+        create = false;
         Stage stage = (Stage) this.BTNback.getScene().getWindow();
         stage.close();
         this.product_aux = null;

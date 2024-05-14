@@ -63,6 +63,7 @@ public class MainPageUserViewController implements Initializable {
     private ArrayList<Product> productArrayList;
     private ObservableList<Product> productObservableList;
     private ObservableList<Product> productsFiltrer;
+    private ObservableList<Product> productsFiltrerLocation;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -90,6 +91,8 @@ public class MainPageUserViewController implements Initializable {
 
 
         productsFiltrer = FXCollections.observableArrayList();
+        productsFiltrerLocation = FXCollections.observableArrayList();
+
     }
 
     /**
@@ -171,6 +174,21 @@ public class MainPageUserViewController implements Initializable {
         }
     }
 
+    public void locationfiltre_Released(KeyEvent keyEvent) {
+        String filtre = this.TFlocation.getText();
+
+        if(filtre.isEmpty()){
+            this.table.setItems(productObservableList);
+        }else{
+            this.productsFiltrerLocation.clear();
+            for (int i = 0; i < productObservableList.size(); i++) {
+                if(productObservableList.get(i).getProductorLocation().contains(filtre)){
+                    this.productsFiltrerLocation.add(productObservableList.get(i));
+                }
+            }
+            this.table.setItems(productsFiltrerLocation);
+        }
+    }
 
 
     /**
@@ -184,8 +202,6 @@ public class MainPageUserViewController implements Initializable {
     }
 
 
-    public void button_click_search(ActionEvent actionEvent) {
-    }
 
 
 }
