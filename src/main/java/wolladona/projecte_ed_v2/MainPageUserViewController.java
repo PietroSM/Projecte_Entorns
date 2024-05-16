@@ -158,6 +158,11 @@ public class MainPageUserViewController implements Initializable {
     }
 
 
+    /**
+     * method that updates the list by type of fruit
+     * (metode que actualitza la llista per el tipo de fruta)
+     * @param keyEvent jumps when typed in the text field
+     */
     public void typefiltre_Released(KeyEvent keyEvent) {
         String filtre = this.TFtype.getText();
 
@@ -174,6 +179,11 @@ public class MainPageUserViewController implements Initializable {
         }
     }
 
+    /**
+     * method that updates the list by location
+     * (metode que actualitza la llista per la localització)
+     * @param keyEvent jumps when typed in the text field
+     */
     public void locationfiltre_Released(KeyEvent keyEvent) {
         String filtre = this.TFlocation.getText();
 
@@ -200,8 +210,5 @@ public class MainPageUserViewController implements Initializable {
         Stage stage = (Stage) this.BTNback.getScene().getWindow();
         stage.close();
     }
-
-
-
 
 }
