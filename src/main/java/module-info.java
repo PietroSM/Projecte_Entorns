@@ -6,4 +6,5 @@ module wolladona.projecte_ed_v2 {
     opens wolladona.projecte_ed_v2 to javafx.fxml;
     opens ProductP;
     exports wolladona.projecte_ed_v2;
+
 }

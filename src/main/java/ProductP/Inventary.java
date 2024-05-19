@@ -2,6 +2,8 @@ package ProductP;
 
 import PersonP.SellerP.Seller;
 import PersonP.Users;
+import Random_Classes.IManageFile;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -10,13 +12,15 @@ import java.util.ArrayList;
  * @author Pedro Sala Mora
  * @version 1
  */
-public class Inventary {
-    private final static String URL_FILE = "D:\\Entorns_Desenvolupament\\Projecte_Final" +
+public class Inventary implements IManageFile {
+    private final static String URL_FILE = "I:\\Entorns_Desenvolupament\\Projecte_Final" +
             "\\Projecte_ED_v2\\src\\File\\Inventary.txt";
 
     private ArrayList<Product> list_Inventary;
 
-    //Builder
+    /**
+     * Constructor without parameters
+     */
     public Inventary() {
         list_Inventary = new ArrayList<>();
     }

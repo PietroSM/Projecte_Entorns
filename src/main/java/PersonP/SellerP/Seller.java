@@ -10,7 +10,15 @@ public abstract class Seller extends Person {
     protected int id_Seller;
     protected String cif;
 
-    //Builders
+    /**
+     * Constructor with parameters
+     * @param name A String with the seller name
+     * @param password A String with the seller password
+     * @param location A String with the seller location
+     * @param email A String with the seller email
+     * @param id_Seller AN int with seller id_Seller
+     * @param cif A String with seller CIF
+     */
     public Seller(String name, String password, String location, String email,
                   int id_Seller, String cif) {
         super(name, password, location, email);
@@ -18,6 +26,9 @@ public abstract class Seller extends Person {
         this.cif = cif;
     }
 
+    /**
+     * Constructor without parameters
+     */
     public Seller() {
         this("","","","",0,"");
     }

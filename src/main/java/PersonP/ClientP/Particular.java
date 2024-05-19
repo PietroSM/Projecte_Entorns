@@ -8,13 +8,24 @@ package PersonP.ClientP;
 public class Particular extends Client{
     private String dni;
 
-    //Builders
+    /**
+     * Constructor with parameters
+     * @param name A String with the Particular name
+     * @param password A String with the Particular password
+     * @param location A String with the Particular location
+     * @param email A String with the Particular email
+     * @param id_Client An int with the Particular id_Client
+     * @param dni A String with the Particular DNI
+     */
     public Particular(String name, String password, String location,
                       String email, int id_Client, String dni) {
         super(name, password, location, email, id_Client);
         this.dni = dni;
     }
 
+    /**
+     * Constructor without parameters
+     */
     public Particular() {
         this("","","","",0,"");
     }

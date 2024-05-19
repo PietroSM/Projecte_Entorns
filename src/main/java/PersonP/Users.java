@@ -5,6 +5,7 @@ import PersonP.ClientP.Particular;
 import PersonP.SellerP.Cooperative;
 import PersonP.SellerP.Freelance;
 import PersonP.SellerP.Seller;
+import Random_Classes.IManageFile;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -14,15 +15,17 @@ import java.util.ArrayList;
  * @author Pedro Sala Mora
  * @version 1
  */
-public class Users {
-    private final static String URL_FILE = "D:\\Entorns_Desenvolupament\\Projecte_Final" +
+public class Users implements IManageFile {
+    private final static String URL_FILE = "I:\\Entorns_Desenvolupament\\Projecte_Final" +
             "\\Projecte_ED_v2\\src\\File\\Users.txt";
 
 
     private ArrayList<Person> list_Person;
 
 
-    //Builder
+    /**
+     * Constructor without parameters
+     */
     public Users() {
         list_Person = new ArrayList<>();
     }
@@ -174,7 +177,12 @@ public class Users {
         return result;
     }
 
-
+    /**
+     * Check if the mail exists in the list
+     * (Comprova si el correu existeix en la llista)
+     * @param email mail to check
+     * @return a boolean telling if it was found or not
+     */
     public boolean CheckEmails(String email){
         boolean resultat = false;
         for (int i = 0; i < list_Person.size(); i++) {

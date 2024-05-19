@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 /**
  * Controller class, in charge of managing the view of adding products
@@ -63,28 +64,50 @@ public class AddProductController implements Initializable {
      * @param actionEvent Click on the add button
      */
     public void button_click_add(ActionEvent actionEvent) {
-        String tfName, tfSeason;
+        String tfName, tfSeason, tfPriceText;
         double tfPrice;
         int tfAmount;
 
         tfName =  TFname.getText();
         tfSeason = TFseason.getText();
-        tfPrice = Double.parseDouble(TFprice.getText());
-        tfAmount = Integer.parseInt(TFamount.getText());
 
-        if(RBfruit.isSelected()){
-            product_aux = new Fruit((Seller) usersListLoginPage.getList_Person().get(pos),
-                    tfSeason,tfPrice,tfAmount,tfName);
-        }else if(RBvegetable.isSelected()){
-            product_aux = new Vegetable((Seller) usersListLoginPage.getList_Person().get(pos),
-                    tfSeason,tfPrice,tfAmount,tfName);
-        } else if (RBleafyvegetable.isSelected()) {
-            product_aux = new VegetableLeafy((Seller) usersListLoginPage.getList_Person().get(pos),
-                    tfSeason,tfPrice,tfAmount,tfName);
+        if(!TFname.getText().isEmpty() &&
+        TFseason.getText().isEmpty()){
+            if(Pattern.matches("[0-9]*",TFprice.getText())
+                    && Pattern.matches("[0-9]*",TFamount.getText())){
+                tfPrice = Double.parseDouble(TFprice.getText());
+                tfAmount = Integer.parseInt(TFamount.getText());
+
+
+                if(RBfruit.isSelected()){
+                    product_aux = new Fruit((Seller) usersListLoginPage.getList_Person().get(pos),
+                            tfSeason,tfPrice,tfAmount,tfName);
+                }else if(RBvegetable.isSelected()){
+                    product_aux = new Vegetable((Seller) usersListLoginPage.getList_Person().get(pos),
+                            tfSeason,tfPrice,tfAmount,tfName);
+                } else if (RBleafyvegetable.isSelected()) {
+                    product_aux = new VegetableLeafy((Seller) usersListLoginPage.getList_Person().get(pos),
+                            tfSeason,tfPrice,tfAmount,tfName);
+                }
+
+                Stage stage = (Stage) this.BTNadd.getScene().getWindow();
+                stage.close();
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("You must enter a number");
+                alert.showAndWait();
+            }
         }
-
-        Stage stage = (Stage) this.BTNadd.getScene().getWindow();
-        stage.close();
+        else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("you must fill in all the fields\n");
+            alert.showAndWait();
+        }
     }
 
     /**

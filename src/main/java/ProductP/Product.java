@@ -17,7 +17,14 @@ public abstract class Product {
     protected int amount;
     protected CheckBox checked;
 
-    //Builders
+    /**
+     * Constructor with parameters
+     * @param productor A Seller With the product productor
+     * @param season A String with the product season
+     * @param priceKg A Double with the product price
+     * @param amount An int with the product amount
+     * @param name A String with the product name
+     */
     public Product(Seller productor, String season, double priceKg, int amount, String name) {
         this.productor = productor;
         this.season = season;
@@ -27,6 +34,9 @@ public abstract class Product {
         this.checked =new CheckBox();
     }
 
+    /**
+     * Constructor without parameters
+     */
     public Product() {
         this(new Freelance() , "", 0, 0,"");
     }

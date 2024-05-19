@@ -171,7 +171,8 @@ public class MainPageUserViewController implements Initializable {
         }else{
             this.productsFiltrer.clear();
             for (int i = 0; i < productObservableList.size(); i++) {
-                if(productObservableList.get(i).getName().contains(filtre)){
+                if(productObservableList.get(i).getName().toLowerCase()
+                        .contains(filtre.toLowerCase())){
                     this.productsFiltrer.add(productObservableList.get(i));
                 }
             }
@@ -192,7 +193,8 @@ public class MainPageUserViewController implements Initializable {
         }else{
             this.productsFiltrerLocation.clear();
             for (int i = 0; i < productObservableList.size(); i++) {
-                if(productObservableList.get(i).getProductorLocation().contains(filtre)){
+                if(productObservableList.get(i).getProductorLocation().toLowerCase()
+                        .contains(filtre.toLowerCase())){
                     this.productsFiltrerLocation.add(productObservableList.get(i));
                 }
             }

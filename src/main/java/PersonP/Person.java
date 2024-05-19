@@ -14,11 +14,20 @@ public abstract class Person {
     protected String email;
 
 
-    //Builders
+    /**
+     * Constructor without parameters
+     */
     public Person() {
         this("","","","");
     }
 
+    /**
+     * Constructor with parameters
+     * @param name A String with the person name
+     * @param password A String with the person password
+     * @param location A String with the person location
+     * @param email A String with the person email
+     */
     public Person(String name, String password, String location, String email) {
         this.name = name;
         this.password = password;

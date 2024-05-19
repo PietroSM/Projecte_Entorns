@@ -125,41 +125,51 @@ public class RegisterPageController implements Initializable {
         location = TFlocation.getText();
         email = TFemail.getText();
 
-        if(!usersList.CheckEmails(email)){
-            if(RBclient.isSelected()){
-                cifCLient = TFcifclient.getText();
-                dniClient = TFdniclien.getText();
+        if(!TFName.getText().isEmpty() &&
+                !PFpassword.getText().isEmpty() &&
+                !TFlocation.getText().isEmpty() &&
+                !TFemail.getText().isEmpty()){
+            if(!usersList.CheckEmails(email)){
+                if(RBclient.isSelected()){
+                    cifCLient = TFcifclient.getText();
+                    dniClient = TFdniclien.getText();
 
-                if(dniClient.isEmpty()){
-                    usersList.AddUser(new Company(name,password,location,email,
-                            1,cifCLient));
+                    if(dniClient.isEmpty()){
+                        usersList.AddUser(new Company(name,password,location,email,
+                                1,cifCLient));
 
-                }else if(cifCLient.isEmpty()){
-                    usersList.AddUser(new Particular(name,password,location,email,
-                            0,dniClient));
+                    }else if(cifCLient.isEmpty()){
+                        usersList.AddUser(new Particular(name,password,location,email,
+                                0,dniClient));
+                    }
+
+                }else if(RBseller.isSelected()){
+                    cifSeller = TFsellercif.getText();
+
+                    if(RBfreelance.isSelected()){
+                        usersList.AddUser(new Freelance(name,password,location,email,
+                                2,cifSeller));
+                    }else if(RBcooperative.isSelected()){
+                        usersList.AddUser(new Cooperative(name,password,location,email,
+                                3,cifSeller));
+                    }
                 }
-
-            }else if(RBseller.isSelected()){
-                cifSeller = TFsellercif.getText();
-
-                if(RBfreelance.isSelected()){
-                    usersList.AddUser(new Freelance(name,password,location,email,
-                            2,cifSeller));
-                }else if(RBcooperative.isSelected()){
-                    usersList.AddUser(new Cooperative(name,password,location,email,
-                            3,cifSeller));
-                }
+                Stage stage = (Stage) this.BTNregister.getScene().getWindow();
+                stage.close();
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Info");
+                alert.setContentText("mail already registered");
+                alert.showAndWait();
             }
-            Stage stage = (Stage) this.BTNregister.getScene().getWindow();
-            stage.close();
         }else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
             alert.setTitle("Info");
-            alert.setContentText("mail already registered");
+            alert.setContentText("you must fill in all the fields\n");
             alert.showAndWait();
         }
-
     }
 
 
